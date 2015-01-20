@@ -41,7 +41,7 @@ En JSON-LD:
 
 
 ## Definir el grado alcohólico de un vino
-En este ejemplo veremos cómo definir una característica de un vino. En particular definiremos que el volumen alcohólico del Vega Sicilia 2008 es del 13%.  
+Este ejemplo muestra cómo definir una característica de un vino. En particular definiremos que el volumen alcohólico del Vega Sicilia Únivo 2008 es del 13%.  
 
 En HTML:
 
@@ -64,3 +64,70 @@ En JSON_LD:
   "ebaco:grado_alcoholico_total": "13"
 }
 {% endhighlight %}
+
+
+## Definir la bodega que elabora un vino
+
+Este ejemplo muestra cómo definir una relación entre dos entidades. En particular definiremos que el vino Vega Sicilia Único 2008 está producido por la bodega Vega Sicilia. 
+
+{% highlight html %}
+<span typeof="ebaco:Vino" about="#vega_sicilia_unico_2008">
+  <span property="dc:name">Vega Sicilia Único</span> 
+  está elaborado por la
+  <span rel="ebaco:producido_por">
+    <span about="#bodega_vega_sicilia" typeof="ebaco:Bodega" property="foaf:name">Bodega Vega Sicilia</span>
+  </span>
+</span>
+{% endhighlight %}
+
+En JSON-LD:
+
+{% highlight json %}
+{
+  "@id": "http://example.org/#vega_sicilia_unico_2008",
+  "@type": "ebaco:Vino",
+  "dc:name": "Vega Sicilia 2008",
+  "ebaco:producido_por": {
+    "@type": "ebaco:Bodega",
+    "foaf:name": "Bodega Vega Sicilia"
+  }
+}
+{% endhighlight %}
+
+
+## Definir las variedades de uva con las que está hecho un vino
+
+Este ejemplo muestra cómo definir una característica formada por una lista no numerada de entidades. En particular definiremos que el vino Vega Sicilia Único 2008 esta hecho con uvas de las variedades tempranillo, cabernet sauvignon y merlot. 
+
+{% highlight html %}
+<span typeof="ebaco:Vino" about="#vega_sicilia_unico_2008">
+  <span property="dc:name">Vega Sicilia Único</span> 
+  está elaborado con uvas de las variedades
+  <ul rel="ebaco:elaborado_con_uva">  
+    <li about="#uva_tempranillo" typeof="ebaco:Uva_tinta">Tempranillo</li>
+    <li about="#uva_cabernet_sauvignon" typeof="ebaco:Uva_tinta">Cabernet Sauvignon</li>
+    <li about="#uva_merlot" typeof="ebaco:Uva_tinta">Merlot</li>
+  </ul>
+</span>
+{% endhighlight %}
+
+En JSON-LD:
+
+{% highlight json %}
+{
+  "@id": "http://example.org/#vega_sicilia_unico_2008",
+  "@type": "ebaco:Vino",
+  "dc:name": "Vega Sicilia 2008",
+  "ebaco:elaborado_con_uva": [{
+    "@id": "http://example.org/#uva_tempranillo",
+    "@type": "ebaco:Uva_tinta"
+  },{
+     "@id": "http://example.org/#uva_cavernet_sauvignon",
+    "@type": "ebaco:Uva_tinta"
+  },{
+    "@id": "http://example.org/#uva_merlot",
+    "@type": "ebaco:Uva_tinta"
+  }]
+}
+{% endhighlight %}
+
