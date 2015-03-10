@@ -6,15 +6,13 @@ image:
   feature: elaboracion_vino-1024x250.jpg
 ---
 
-La última versión (v.1.2) de la ontología contiene 135 clases de conceptos, 54 propiedades, 32 relaciones y 2770 axiomas y puede accederse a ella en dos formatos:
+La ontología E-BACO se compone de varios módulos que contienen vocabulario para distintas apliaciones de uso:
 
-- RDF/XML (formato pensado para las máquinas): [http://purl.org/ceu/ebaco](http://purl.org/ceu/ebaco)
-- RDF/Turtle (formato pensado para humanos): [http://purl.org/ceu/ebaco](http://purl.org/ceu/ebaco)
+- **E-BACO-Core**: Módulo que define el vocabulario básico para describir los distintos tipos de vinos.
+	- [Ver especificación](/especificacion/ebaco-core.html)
+	- Descargar en formato RDF/XML: [http://purl.org/ceu/ebaco](http://purl.org/ceu/ebaco-core)
 
-## Clases
+- **E-BACO-Tasting**: Módulo que define el vocabulario para describir la cata de vinos y el maridaje de vinos con comidas. 
 
-## Propiedades
+- **E-BACO-Winemaking**: Módulo que define el vocabulario para describir la vinifiación (proceso de elaboración de un vino).    
 
-## Relaciones
-
-## Axiomas
