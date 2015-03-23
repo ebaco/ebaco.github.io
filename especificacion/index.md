@@ -10,9 +10,11 @@ La ontología E-BACO se compone de varios módulos que contienen vocabulario par
 
 - **E-BACO-Core**: Módulo que define el vocabulario básico para describir los distintos tipos de vinos.
 	- [Ver especificación](/especificacion/ebaco-core.html)
-	- Descargar en formato RDF/XML: [http://purl.org/ceu/ebaco](http://purl.org/ceu/ebaco-core)
+	- Descargar en formato RDF/XML: [http://purl.org/ceu/ebaco-core](http://purl.org/ceu/ebaco-core)
 
 - **E-BACO-Tasting**: Módulo que define el vocabulario para describir la cata de vinos y el maridaje de vinos con comidas. 
+	- [Ver especificación](/especificacion/ebaco-tasting.html)
+	- Descargar en formato RDF/XML: [http://purl.org/ceu/ebaco-tasting](http://purl.org/ceu/ebaco-tasting)
 
 - **E-BACO-Winemaking**: Módulo que define el vocabulario para describir la vinifiación (proceso de elaboración de un vino).    
 
