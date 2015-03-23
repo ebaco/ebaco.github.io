@@ -17,16 +17,16 @@
 
 <rdf:RDF xmlns="http://purl.org/ceu/ebaco#"
      xml:base="http://purl.org/ceu/ebaco"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:webprotege="http://protege.stanford.edu/webprotege/"
-     xmlns:tasting="http://purl.org/ceu/ebaco/tasting/1.0#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:tasting="http://purl.org/ceu/ebaco/tasting/1.0#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:ebaco="http://purl.org/ceu/ebaco/1.0#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.org/ceu/ebaco/tasting">
         <rdfs:label rdf:datatype="&xsd;string">Ontología E-BACO</rdfs:label>
         <dc:date rdf:datatype="&xsd;dateTime">09-feb-2015 11:20:52</dc:date>
@@ -582,7 +582,7 @@ Ha sido desarrollada por la Universidad Complutense de Madrid y la Universidad S
     <owl:ObjectProperty rdf:about="&tasting;has_colour">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label xml:lang="en">has colour</rdfs:label>
-        <rdfs:label xml:lang="es">Tiene color</rdfs:label>
+        <rdfs:label xml:lang="es">tiene color</rdfs:label>
         <rdfs:comment xml:lang="es">Propiedad que relaciona una cata de un vino con el color que presenta el vino.</rdfs:comment>
         <rdfs:range rdf:resource="&tasting;Wine_colour"/>
         <rdfs:domain rdf:resource="&tasting;Wine_tasting"/>
@@ -1656,6 +1656,12 @@ En el se aprecian los reflejos del vino que indican aspectos como su edad o esta
         <rdfs:label xml:lang="es">Cata de vino</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&tasting;has_colour_intensity"/>
+                <owl:someValuesFrom rdf:resource="&tasting;Wine_colour_intensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&tasting;has_clarity"/>
                 <owl:someValuesFrom rdf:resource="&tasting;Wine_clarity"/>
             </owl:Restriction>
@@ -1668,20 +1674,14 @@ En el se aprecian los reflejos del vino que indican aspectos como su edad o esta
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&tasting;has_aroma_intensity"/>
-                <owl:someValuesFrom rdf:resource="&tasting;Aroma_intensity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&tasting;has_edging_colour"/>
                 <owl:someValuesFrom rdf:resource="&tasting;Wine_edging_colour"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&tasting;has_colour_intensity"/>
-                <owl:someValuesFrom rdf:resource="&tasting;Wine_colour_intensity"/>
+                <owl:onProperty rdf:resource="&tasting;has_aroma_intensity"/>
+                <owl:someValuesFrom rdf:resource="&tasting;Aroma_intensity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4410,8 +4410,8 @@ Cuanto más numerosas, largas y persistentes son las lágrimas, más cuerpo, vol
 
     <owl:NamedIndividual rdf:about="&tasting;bluefish">
         <rdf:type rdf:resource="&tasting;Fish"/>
-        <rdfs:label xml:lang="en">Bluefish</rdfs:label>
         <rdfs:label>Pescado azul</rdfs:label>
+        <rdfs:label xml:lang="en">Bluefish</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4430,8 +4430,8 @@ Cuanto más numerosas, largas y persistentes son las lágrimas, más cuerpo, vol
 
     <owl:NamedIndividual rdf:about="&tasting;brown_colour">
         <rdf:type rdf:resource="&tasting;White_wine_colour"/>
-        <rdfs:label>Color marrón</rdfs:label>
         <rdfs:label xml:lang="en">brown colour</rdfs:label>
+        <rdfs:label xml:lang="es">Color marrón</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4590,8 +4590,8 @@ Cuanto más numerosas, largas y persistentes son las lágrimas, más cuerpo, vol
 
     <owl:NamedIndividual rdf:about="&tasting;desert">
         <rdf:type rdf:resource="&tasting;Dessert"/>
-        <rdfs:label xml:lang="en">Desert</rdfs:label>
         <rdfs:label>Postres en general</rdfs:label>
+        <rdfs:label xml:lang="en">Desert</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4600,8 +4600,8 @@ Cuanto más numerosas, largas y persistentes son las lágrimas, más cuerpo, vol
 
     <owl:NamedIndividual rdf:about="&tasting;dry_fruits">
         <rdf:type rdf:resource="&tasting;Dessert"/>
-        <rdfs:label xml:lang="en">Dry fruits</rdfs:label>
         <rdfs:label>Frutos secos</rdfs:label>
+        <rdfs:label xml:lang="en">Dry fruits</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -5172,8 +5172,8 @@ Cuanto más numerosas, largas y persistentes son las lágrimas, más cuerpo, vol
 
     <owl:NamedIndividual rdf:about="&tasting;pink_colour">
         <rdf:type rdf:resource="&tasting;Rose_wine_colour"/>
-        <rdfs:label>Color rosa</rdfs:label>
         <rdfs:label xml:lang="en">pink colour</rdfs:label>
+        <rdfs:label xml:lang="es">Color rosa</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -5352,8 +5352,8 @@ Cuanto más numerosas, largas y persistentes son las lágrimas, más cuerpo, vol
 
     <owl:NamedIndividual rdf:about="&tasting;ripened_cheese">
         <rdf:type rdf:resource="&tasting;Dairy"/>
-        <rdfs:label>Queso curado</rdfs:label>
         <rdfs:label xml:lang="en">Ripened cheese</rdfs:label>
+        <rdfs:label xml:lang="es">Queso curado</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -5591,8 +5591,8 @@ Cuanto más numerosas, largas y persistentes son las lágrimas, más cuerpo, vol
 
     <owl:NamedIndividual rdf:about="&tasting;whitefish">
         <rdf:type rdf:resource="&tasting;Fish"/>
-        <rdfs:label>Pescado blanco</rdfs:label>
         <rdfs:label xml:lang="en">Whitefish</rdfs:label>
+        <rdfs:label xml:lang="es">Pescado blanco</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -5615,131 +5615,95 @@ Cuanto más numerosas, largas y persistentes son las lágrimas, más cuerpo, vol
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedCommunication">
-        <rdfs:label xml:lang="es">Comunicación cualificada</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#startedAtTime">
+        <rdfs:label xml:lang="es">Comenzado en tiempo</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#generatedAtTime">
-        <rdfs:label xml:lang="es">generado en tiempo</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant">
-        <rdfs:label xml:lang="es">Instante</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Communication">
-        <rdfs:label xml:lang="es">Comunicación</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#invalidated">
-        <rdfs:label xml:lang="es">invalida</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#alternateOf">
-        <rdfs:label xml:lang="es">alternativa de</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Usage">
-        <rdfs:label xml:lang="es">Uso</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/2006/time#TemporalEntity">
-        <rdfs:label xml:lang="es">Entidad temporal</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#activity">
-        <rdfs:label xml:lang="es">actividad</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasAssociatedWith">
-        <rdfs:label xml:lang="es">asociado con</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedDelegation">
-        <rdfs:label xml:lang="es">Delegación cualificada</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#AgentInfluence">
-        <rdfs:label xml:lang="es">Influencia de agente</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval">
+        <rdfs:label xml:lang="es">Intervalo temporal</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasDerivedFrom">
         <rdfs:label xml:lang="es">derivado de</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasAttributedTo">
-        <rdfs:label xml:lang="es">atribuido a</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#atTime">
+        <rdfs:label xml:lang="es">en tiempo</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#wasDerivedFrom">
-        <rdfs:label xml:lang="es">Derivado de</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedDerivation">
+        <rdfs:label xml:lang="es">Derivación cualificada</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/2006/time#hasBeginning">
-        <rdfs:label xml:lang="es">Inicio</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/2006/vcard/ns#Organization">
+        <rdfs:label xml:lang="es">Organización</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#Process">
-        <rdfs:label xml:lang="es">Proceso</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedEnd">
-        <rdfs:label xml:lang="es">Final cualificado</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#specializationOf">
-        <rdfs:label xml:lang="es">especialización de</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Attribution">
-        <rdfs:label xml:lang="es">Atribución</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#endedAtTime">
-        <rdfs:label xml:lang="es">terminado en tiempo</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#used">
+        <rdfs:label xml:lang="es">usa</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/ns/prov#InstantaneousEvent">
         <rdfs:label xml:lang="es">Evento instantáneo</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Start">
-        <rdfs:label xml:lang="es">Inicio</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#wasGeneratedBy">
-        <rdfs:label xml:lang="es">Generado por</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://webprotege.uspceu.es/ontologies/vino/1.0/tiene_porcentaje">
-        <rdfs:label xml:lang="es">Tiene porcentaje</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Plan">
-        <rdfs:label xml:lang="es">Plan</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasInformedBy">
-        <rdfs:label xml:lang="es">informado por</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/ns/prov#hadUsage">
         <rdfs:label xml:lang="es">tiene uso</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#hadActivity">
-        <rdfs:label xml:lang="es">tiene actividad</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasStartedBy">
+        <rdfs:label xml:lang="es">comenzado por</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Influence">
-        <rdfs:label xml:lang="es">Influencia</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasEndedBy">
-        <rdfs:label xml:lang="es">terminado por</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#wasStartedAt">
-        <rdfs:label xml:lang="es">Comenzado</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#wasGeneratedAt">
-        <rdfs:label xml:lang="es">Generado en</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasGeneratedBy">
-        <rdfs:label xml:lang="es">generado por</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedAttribution">
-        <rdfs:label xml:lang="es">Atribución cualificada</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/2006/time#hasEnd">
-        <rdfs:label xml:lang="es">Final</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#Agent">
-        <rdfs:label xml:lang="es">Agente</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#hasBeginning">
+        <rdfs:label xml:lang="es">Inicio</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/net/opmv/ns#wasEndedAt">
         <rdfs:label xml:lang="es">Terminado</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedGeneration">
-        <rdfs:label xml:lang="es">Generación cualificada</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#specializationOf">
+        <rdfs:label xml:lang="es">especialización de</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/ns/prov#ActivityInfluence">
         <rdfs:label xml:lang="es">Influencia de actividad</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Invalidation">
-        <rdfs:label xml:lang="es">Invalidación</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasInvalidatedBy">
+        <rdfs:label xml:lang="es">invalidado por</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Collection">
-        <rdfs:label xml:lang="es">Colección</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedStart">
+        <rdfs:label xml:lang="es">Inicio cualificado</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#wasGeneratedBy">
+        <rdfs:label xml:lang="es">Generado por</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#hadActivity">
+        <rdfs:label xml:lang="es">tiene actividad</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#agent">
+        <rdfs:label xml:lang="es">agente</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedEnd">
+        <rdfs:label xml:lang="es">Final cualificado</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://webprotege.uspceu.es/ontologies/vino/1.0/tiene_porcentaje">
+        <rdfs:label xml:lang="es">Tiene porcentaje</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasAssociatedWith">
+        <rdfs:label xml:lang="es">asociado con</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedAssociation">
+        <rdfs:label xml:lang="es">Asociación cualificada</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#atLocation">
+        <rdfs:label xml:lang="es">ubicado en</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#hadPlan">
+        <rdfs:label xml:lang="es">tiene plan</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Start">
+        <rdfs:label xml:lang="es">Inicio</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Role">
+        <rdfs:label xml:lang="es">Rol</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#alternateOf">
+        <rdfs:label xml:lang="es">alternativa de</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Influence">
+        <rdfs:label xml:lang="es">Influencia</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Association">
+        <rdfs:label xml:lang="es">Asociación</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/ns/prov#Generation">
         <rdfs:label xml:lang="es">Generación</rdfs:label>
@@ -5747,135 +5711,171 @@ Cuanto más numerosas, largas y persistentes son las lágrimas, más cuerpo, vol
     <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedUsage">
         <rdfs:label xml:lang="es">Uso cualificado</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#EmptyCollection">
-        <rdfs:label xml:lang="es">Colección vacía</rdfs:label>
+    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#Artifact">
+        <rdfs:label xml:lang="es">Artefacto</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#Agent">
+        <rdfs:label xml:lang="es">Agente</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#invalidatedAtTime">
+        <rdfs:label xml:lang="es">Invalidado en tiempo</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#End">
+        <rdfs:label xml:lang="es">Fin</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasInformedBy">
+        <rdfs:label xml:lang="es">informado por</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#endedAtTime">
+        <rdfs:label xml:lang="es">terminado en tiempo</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#hasEnd">
+        <rdfs:label xml:lang="es">Final</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasEndedBy">
+        <rdfs:label xml:lang="es">terminado por</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedGeneration">
+        <rdfs:label xml:lang="es">Generación cualificada</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#AgentInfluence">
+        <rdfs:label xml:lang="es">Influencia de agente</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedCommunication">
+        <rdfs:label xml:lang="es">Comunicación cualificada</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#Process">
+        <rdfs:label xml:lang="es">Proceso</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#EntityInfluence">
+        <rdfs:label xml:lang="es">Influencia de entidad</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#generatedAtTime">
+        <rdfs:label xml:lang="es">generado en tiempo</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#wasPerformedAt">
+        <rdfs:label xml:lang="es">Relizado en</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/ns/prov#generated">
         <rdfs:label xml:lang="es">genera</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Role">
-        <rdfs:label xml:lang="es">Rol</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#EmptyCollection">
+        <rdfs:label xml:lang="es">Colección vacía</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#influencer">
-        <rdfs:label xml:lang="es">influenciador</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#actedOnBehalfOf">
+        <rdfs:label xml:lang="es">en nombre de</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#hadRole">
-        <rdfs:label xml:lang="es">tiene rol</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Agent">
+        <rdfs:label xml:lang="es">Agente</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#wasTriggeredBy">
-        <rdfs:label xml:lang="es">Lanzado por</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Communication">
+        <rdfs:label xml:lang="es">Comunicación</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#withRespectOf">
-        <rdfs:label xml:lang="es">Con respecto de</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Derivation">
-        <rdfs:label xml:lang="es">Derivación</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedAssociation">
-        <rdfs:label xml:lang="es">Asociación cualificada</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval">
-        <rdfs:label xml:lang="es">Intervalo temporal</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#atLocation">
-        <rdfs:label xml:lang="es">ubicado en</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#value">
-        <rdfs:label xml:lang="es">valor</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedDerivation">
-        <rdfs:label xml:lang="es">Derivación cualificada</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#hadGeneration">
-        <rdfs:label xml:lang="es">tiene generación</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasGeneratedBy">
+        <rdfs:label xml:lang="es">generado por</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/net/opmv/ns#wasUsedAt">
         <rdfs:label xml:lang="es">Usado el</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#startedAtTime">
-        <rdfs:label xml:lang="es">Comenzado en tiempo</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#value">
+        <rdfs:label xml:lang="es">valor</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#agent">
-        <rdfs:label xml:lang="es">agente</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedInvalidation">
-        <rdfs:label xml:lang="es">Invalidación cualificada</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Location">
-        <rdfs:label xml:lang="es">Ubicación</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#hadMember">
-        <rdfs:label xml:lang="es">tiene miembro</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasInvalidatedBy">
-        <rdfs:label xml:lang="es">invalidado por</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasStartedBy">
-        <rdfs:label xml:lang="es">comenzado por</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedAttribution">
+        <rdfs:label xml:lang="es">Atribución cualificada</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/ns/prov#entity">
         <rdfs:label xml:lang="es">entidad</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#used">
-        <rdfs:label xml:lang="es">Usa</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasInfluencedBy">
+        <rdfs:label xml:lang="es">influenciado por</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#hadPlan">
-        <rdfs:label xml:lang="es">tiene plan</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#influenced">
+        <rdfs:label xml:lang="es">influencia</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#End">
-        <rdfs:label xml:lang="es">Fin</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#invalidated">
+        <rdfs:label xml:lang="es">invalida</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#wasTriggeredBy">
+        <rdfs:label xml:lang="es">Lanzado por</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#activity">
+        <rdfs:label xml:lang="es">actividad</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#hadMember">
+        <rdfs:label xml:lang="es">tiene miembro</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#wasControlledBy">
+        <rdfs:label xml:lang="es">Controlado por</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&tasting;pizza">
         <rdfs:label xml:lang="en">Pizza</rdfs:label>
         <rdfs:label xml:lang="es">Pizza</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#used">
-        <rdfs:label xml:lang="es">usa</rdfs:label>
+    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#wasDerivedFrom">
+        <rdfs:label xml:lang="es">Derivado de</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#actedOnBehalfOf">
-        <rdfs:label xml:lang="es">en nombre de</rdfs:label>
+    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#used">
+        <rdfs:label xml:lang="es">Usa</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedStart">
-        <rdfs:label xml:lang="es">Inicio cualificado</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasAttributedTo">
+        <rdfs:label xml:lang="es">atribuido a</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#EntityInfluence">
-        <rdfs:label xml:lang="es">Influencia de entidad</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Collection">
+        <rdfs:label xml:lang="es">Colección</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#wasPerformedAt">
-        <rdfs:label xml:lang="es">Relizado en</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Attribution">
+        <rdfs:label xml:lang="es">Atribución</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#Artifact">
-        <rdfs:label xml:lang="es">Artefacto</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Location">
+        <rdfs:label xml:lang="es">Ubicación</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#invalidatedAtTime">
-        <rdfs:label xml:lang="es">Invalidado en tiempo</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#hadRole">
+        <rdfs:label xml:lang="es">tiene rol</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Association">
-        <rdfs:label xml:lang="es">Asociación</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Invalidation">
+        <rdfs:label xml:lang="es">Invalidación</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasInfluencedBy">
-        <rdfs:label xml:lang="es">influenciado por</rdfs:label>
+    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#wasStartedAt">
+        <rdfs:label xml:lang="es">Comenzado</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#wasControlledBy">
-        <rdfs:label xml:lang="es">Controlado por</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Derivation">
+        <rdfs:label xml:lang="es">Derivación</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#influenced">
-        <rdfs:label xml:lang="es">influencia</rdfs:label>
+    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#wasGeneratedAt">
+        <rdfs:label xml:lang="es">Generado en</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/2006/vcard/ns#Organization">
-        <rdfs:label xml:lang="es">Organización</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedInvalidation">
+        <rdfs:label xml:lang="es">Invalidación cualificada</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#atTime">
-        <rdfs:label xml:lang="es">en tiempo</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedDelegation">
+        <rdfs:label xml:lang="es">Delegación cualificada</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Usage">
+        <rdfs:label xml:lang="es">Uso</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedInfluence">
         <rdfs:label xml:lang="es">Influencia cualificada</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Agent">
-        <rdfs:label xml:lang="es">Agente</rdfs:label>
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant">
+        <rdfs:label xml:lang="es">Instante</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#TemporalEntity">
+        <rdfs:label xml:lang="es">Entidad temporal</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Plan">
+        <rdfs:label xml:lang="es">Plan</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/ns/prov#Delegation">
         <rdfs:label xml:lang="es">Delegación</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#influencer">
+        <rdfs:label xml:lang="es">influenciador</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#hadGeneration">
+        <rdfs:label xml:lang="es">tiene generación</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/net/opmv/ns#withRespectOf">
+        <rdfs:label xml:lang="es">Con respecto de</rdfs:label>
     </rdf:Description>
     
 
