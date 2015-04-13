@@ -17,4 +17,5 @@ La ontología E-BACO se compone de varios módulos que contienen vocabulario par
 	- Descargar en formato RDF/XML: <http://purl.org/ceu/ebaco/tasting>
 
 - **E-BACO-Winemaking**: Módulo que define el vocabulario para describir la vinifiación (proceso de elaboración de un vino).    
-
+	- [Ver especificación](/especificacion/ebaco-winemaking.html)
+	- Descargar en formato RDF/XML: <http://purl.org/ceu/ebaco/winemaking>
