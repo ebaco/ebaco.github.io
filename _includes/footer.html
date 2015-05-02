@@ -1,11 +1,17 @@
 <footer role="contentinfo" id="site-footer">
 	<nav role="navigation" class="menu">
 		<ul class="footer-links">
-		{% for link in site.data.footer %}
+		{% if page.language == "es" %}
+                    {% for link in site.data.footer_es %}
 			<li><a href="{{ link.url }}">{{ link.title }}</a></li>
-		{% endfor %}
+                    {% endfor %}
+                {% else %}
+                    {% for link in site.data.footer_en %}
+			<li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                {% endif %}    
 		</ul>
-		<ul class="social-links">
+				<ul class="social-links">
 			<li><a href="https://twitter.com/{{ site.owner.twitter }}" onclick="ga('send', 'event', 'link', 'click', 'Twitter follow');">
 				<span class="twitter fa-stack fa-lg">
 				  <i class="fa fa-circle fa-stack-2x"></i>
@@ -24,7 +30,18 @@
 				  <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
 				</span>
 			</a></li>
+			<li>
+                        {% if page.language == "es" %}
+                            {% capture link1 %}{{ site.baseurl }}/en/{{ page.url | remove_language }}{% endcapture %}
+                            <a href="{{ link1 }}" ><img src='{{root_url}}/images/en.png' alt='{% t global.switch %} {% t global.spanish %}' class='flag'/></a>
+                        {% else if %}
+                            {% capture link2 %}{{ site.baseurl }}/es/{{ page.url | remove_language }}{% endcapture %}
+                            <a href="{{ link2 }}" ><img src='{{root_url}}/images/es.png' alt='{% t global.switch %} {% t global.english %}' class='flag'/></a>
+                        {% endif %}
+                        </li>
 		</ul>
 	</nav><!-- /.menu -->
-	<p class="copyright">Sitio web creado por <a href="http://aprendeconalf.es">Alfredo Sánchez Alberca</a> con <a href="http://jekyllrb.com/">Jekyll</a> y la plantilla <a href="http://mmistakes.github.io/skinny-bones-jekyll/" >Skinny Bones</a>. &#169; 2014-{{ site.time | date: '%Y' }}</p>
+	
+	<p class="copyright">Website built by <a href="http://aprendeconalf.es">Alfredo Sánchez Alberca</a> with <a href="http://jekyllrb.com/">Jekyll</a> and <a href="http://mmistakes.github.io/skinny-bones-jekyll/" >Skinny Bones</a> template. &#169; 2014-{{ site.time | date: '%Y' }}</p>
+	
 </footer>

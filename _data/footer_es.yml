@@ -1,0 +1,16 @@
+# Footer navigation links
+
+- title: Inicio
+  url: /es/
+
+- title: Autores
+  url: /es/authors/
+
+- title: Patrocinadores
+  url: /es/sponsors/
+
+- title: Licencia
+  url: /es/license/
+
+- title: Mapa del sito
+  url: /es/sitemap/

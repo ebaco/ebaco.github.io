@@ -1,13 +1,25 @@
 <nav role="navigation" id="js-menu" class="sliding-menu-content">
-  <h5>Ontología E-BACO <span>Índice de Contenidos</span></h5>
+  <h5>E-BACO <span>{% t navigation.toc %}</span></h5>
   <ul class="menu-item">
-    {% for link in site.data.navigation %}<li>
+  {% if page.language == "es" %}
+    {% for link in site.data.navigation_es %}<li>
       <a href="{{ link.url }}">
         {% if link.image %}<img src="/images/{{ link.image }}" alt="teaser" class="teaser">{% endif %}
         <div class="title">{{ link.title }}</div>
         {% if link.excerpt %}<p class="excerpt">{{ link.excerpt }}</p>{% endif %}
       </a>
-    </li>{% endfor %}
+    </li>
+    {% endfor %}
+  {% else %}
+    {% for link in site.data.navigation_en %}<li>
+      <a href="{{ link.url }}">
+        {% if link.image %}<img src="/images/{{ link.image }}" alt="teaser" class="teaser">{% endif %}
+        <div class="title">{{ link.title }}</div>
+        {% if link.excerpt %}<p class="excerpt">{{ link.excerpt }}</p>{% endif %}
+      </a>
+    </li>
+    {% endfor %}
+  {% endif %}
   </ul>
 </nav>
 <button type="button" id="js-menu-trigger" class="sliding-menu-button lines-button x2" role="button" aria-label="Toggle Navigation">

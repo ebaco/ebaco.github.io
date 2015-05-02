@@ -1,0 +1,33 @@
+# Site navigation links
+
+- title: Introducción
+  url: /es/introduction/
+  excerpt: "Breve introducción a la ontología E-Baco."
+  image: uva_tinta-400x250.jpg
+
+- title: Especificación
+  url: /es/specification/
+  excerpt: "Especificación formal de las clases, propiedades, relaciones y axiomas que componen la ontología."
+  image: elaboracion_vino-400x250.jpg
+
+- title: Uso
+  url: /es/usage/
+  excerpt: "Ejemplos de uso de la ontología E-Baco."
+  image: barricas-400x250.jpg
+
+- title: Aplicaciones
+  url: /es/applications/
+  excerpt: "Aplicaciones reales de la ontología E-Baco."
+  image: sacacorchos-400x250.jpg
+  
+- title: Publicaciones
+  url: /es/publications/
+  excerpt: "Publicaciones sobre la ontología E-Baco."
+  image: botella_copa-400x250.jpg
+  
+- title: FAQ
+  url: /es/faq/
+  excerpt: "Preguntas frecuentes"
+  image: corchos-400x250.jpg
+  
+  

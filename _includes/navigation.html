@@ -1,5 +1,11 @@
 <ul class="menu-item">
-	{% for link in site.data.navigation %}
+{% if page.language == "es" %}
+  {% for link in site.data.navigation_es %}
     <li><a href="{{ link.url }}">{{ link.title }}</a></li>
   {% endfor %}
+{% else %}
+  {% for link in site.data.navigation_en %}
+    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+  {% endfor %}
+{% endif %}
 </ul>

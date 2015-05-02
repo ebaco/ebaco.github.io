@@ -1,0 +1,1 @@
+This site has been created with http://brendamour.net/en/2014/08/03/multilingual-jekyll-how-to-post-in-more-than-one-language/ plugin for enabling multilingual

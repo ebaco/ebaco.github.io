@@ -10,7 +10,7 @@ locale: es_ES
 
 # Jekyll configuration
 
-permalink: /:categories/:title/
+permalink: /:categories/:title.html
 lsi: true
 markdown: kramdown
 kramdown:
@@ -22,6 +22,8 @@ gems:
 include: [".htaccess"]
 exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "node_modules", "Gruntfile.js", "package.json", ".jekyll-assets-cache"]
 
+# The first language is the default language of your site
+languages: ['en','es']
 
 # Plugin: jekyll-assets
 
@@ -36,6 +38,8 @@ assets:
   debug: false
   version: 1
 
+  
+pagination: 8
 
 # Site owner
 
