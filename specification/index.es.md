@@ -16,5 +16,5 @@ La ontología E-Baco se compone de tres módulos que contienen el vocabulario pa
 	- Descargar en formato RDF/XML: <http://purl.org/ceu/ebaco/tasting>
 
 - **E-Baco-Winemaking**:  Módulo que define el vocabulario para describir las propiedades químicas de los vinos y su proceso de elaboración desde un punto de vista experto. Orientado a bodegas y enólogos. 
-	- [Ver especificación](/especificacion/ebaco-winemaking-es.html)
+	- [Ver especificación](/specification/ebaco-winemaking-es.html)
 	- Descargar en formato RDF/XML: <http://purl.org/ceu/ebaco/winemaking>
