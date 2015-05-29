@@ -34,7 +34,6 @@ Esto permite, entre otras cosas, hacer búsquedas con criterios semánticos en l
 En los últimos años, el desarrollo de ontologías para dotar de semántica a los datos publicados en la web ha crecido exponencialemente. 
 Muchas áreas de conocimiento han adoptado ontologías como estándares para modelar su realidad, como por ejemplo, la [ontología Dublin Core](http://dublincore.org/) que define un vocabulario semántico para describir documentos, un subconjunto del cual es utilizado por la Wikipedia; la [ontología FOAF](http://www.foaf-project.org/) (Friend Of A Friend) que define un vocabulario básico para describir a las personas y las cosas; la [ontología GoodRelations](http://purl.org/goodrelations/) utilizada por Google y Yahoo para describir productos transacciones en el comercio electrónico; o la [GeneOntology](http://geneontology.org/) utilizada para describir los genes y las proteinas de los seres vivos.
 
-Unfortunately, there is not a standard ontology in the oenology field, and thus, we have addressed this task building an ontology for wines that we have named E-Baco.
 Por desgracia, no existe todavía una ontología de referencia en el campo de la enología, de manera que hemos abordado esta tarea y hemos construido una ontología para el mundo del vino que hemos llamado E-Baco.
 
 
