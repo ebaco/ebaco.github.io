@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+
+
+<title>E-BACO &#8211; PaperFaces Portraits</title>
+<generator uri="https://github.com/jekyll/jekyll">Jekyll v2.5.3</generator>
+<icon>/apple-touch-icon-precomposed.png</icon>
+<subtitle>Página web de la ontología E-BACO.</subtitle>
+<link href="/paperfaces-feed.xml" rel="self"/>
+<link href="/" rel="alternate" type="text/html"/>
+<updated>2015-08-11T14:21:02+02:00</updated>
+<id>/</id>
+<author>
+	<name>Alfredo Sánchez Alberca</name>
+	<uri>/</uri>
+	<email>ontologia.ebaco@gmail.com</email>
+</author>
+
+
+
+</feed>

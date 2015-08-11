@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+
+
+<title>E-BACO</title>
+<generator uri="https://github.com/jekyll/jekyll">Jekyll v2.5.3</generator>
+<icon>/apple-touch-icon-precomposed.png</icon>
+<subtitle>Página web de la ontología E-BACO.</subtitle>
+<link href="/atom.xml" rel="self"/>
+<link href="/" rel="alternate" type="text/html"/>
+<updated>2015-08-11T14:21:02+02:00</updated>
+<id>/</id>
+<author>
+  <name>Alfredo Sánchez Alberca</name>
+  <uri>/</uri>
+  <email>ontologia.ebaco@gmail.com</email>
+</author>
+
+
+<entry>
+  <title>Liberada la versión 1.0 de E-Baco</title>
+  <link href="/es/ebaco-v1-0.html"/>
+  <updated>2015-01-15T00:00:00+01:00</updated>
+  <id>/es/ebaco-v1-0.es</id>
+  <author>
+    <name>Alfredo Sánchez Alberca</name>
+    <uri>/</uri>
+    <email>ontologia.ebaco@gmail.com</email>
+  </author>
+  <content type="html">
+    
+    &lt;p&gt;Ya está disponible la versión 1.0 de la ontología E-BACO. Esta versión contiene 135 clases de conceptos, 54 propiedades, 32 relaciones y 2770 axiomas.
+Aunque la ontología está todavía evolucionando, esta versión es ya estable para poder usarla en la modelización de la descripción de vinos. &lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/es/ebaco-v1-0.html&quot; rel=&quot;nofollow&quot;&gt;Liberada la versión 1.0 de E-Baco&lt;/a&gt; was originally published by &lt;a href=&quot;/about/&quot; rel=&quot;nofollow&quot;&gt;Alfredo Sánchez Alberca&lt;/a&gt; on &lt;a href=&quot;&quot; rel=&quot;nofollow&quot;&gt;E-BACO&lt;/a&gt;.&lt;/p&gt;
+  </content>
+</entry>
+
+<entry>
+  <title>Delivered E-Baco version 1.0</title>
+  <link href="/en/ebaco-v1-0.html"/>
+  <updated>2015-01-15T00:00:00+01:00</updated>
+  <id>/en/ebaco-v1-0.en</id>
+  <author>
+    <name>Alfredo Sánchez Alberca</name>
+    <uri>/</uri>
+    <email>ontologia.ebaco@gmail.com</email>
+  </author>
+  <content type="html">
+    
+    &lt;p&gt;Version 1.0 of E-Baco ontology has been released.
+This version has 135 clases, 54 properties, 32 relations y 2770 axioms.
+Although the ontology is rapidly evolving, this version is stable to be used for modeling data about wines.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/en/ebaco-v1-0.html&quot; rel=&quot;nofollow&quot;&gt;Delivered E-Baco version 1.0&lt;/a&gt; was originally published by &lt;a href=&quot;/about/&quot; rel=&quot;nofollow&quot;&gt;Alfredo Sánchez Alberca&lt;/a&gt; on &lt;a href=&quot;&quot; rel=&quot;nofollow&quot;&gt;E-BACO&lt;/a&gt;.&lt;/p&gt;
+  </content>
+</entry>
+
+<entry>
+  <title>E-Baco ya tiene URI</title>
+  <link href="/es/uri-ebaco.html"/>
+  <updated>2014-09-10T00:00:00+02:00</updated>
+  <id>/es/uri-ebaco.es</id>
+  <author>
+    <name>Alfredo Sánchez Alberca</name>
+    <uri>/</uri>
+    <email>ontologia.ebaco@gmail.com</email>
+  </author>
+  <content type="html">
+    
+    &lt;p&gt;La ontología E-Baco ya tiene una dirección URI (Uniform Resource Identificator) fija. A partir de ahora, la última versión de E-BACO estará siempre disponible en las direcciones siguientes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Módulo E-Baco-Core: &lt;a href=&quot;http://purl.org/ceu/ebaco-core&quot;&gt;http://purl.org/ceu/ebaco-core&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Módulo E-Baco-Tasting: &lt;a href=&quot;http://purl.org/ceu/ebaco-tasting&quot;&gt;http://purl.org/ceu/ebaco-tasting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Módulo E-Baco-Winemaking: &lt;a href=&quot;http://purl.org/ceu/ebaco-winemaking&quot;&gt;http://purl.org/ceu/ebaco-winemaking&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;El formato por defecto será RDF/XML pero también estará disponible en otros formatos como Turtle.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/es/uri-ebaco.html&quot; rel=&quot;nofollow&quot;&gt;E-Baco ya tiene URI&lt;/a&gt; was originally published by &lt;a href=&quot;/about/&quot; rel=&quot;nofollow&quot;&gt;Alfredo Sánchez Alberca&lt;/a&gt; on &lt;a href=&quot;&quot; rel=&quot;nofollow&quot;&gt;E-BACO&lt;/a&gt;.&lt;/p&gt;
+  </content>
+</entry>
+
+<entry>
+  <title>E-Baco does have a URI</title>
+  <link href="/en/uri-ebaco.html"/>
+  <updated>2014-09-10T00:00:00+02:00</updated>
+  <id>/en/uri-ebaco.en</id>
+  <author>
+    <name>Alfredo Sánchez Alberca</name>
+    <uri>/</uri>
+    <email>ontologia.ebaco@gmail.com</email>
+  </author>
+  <content type="html">
+    
+    &lt;p&gt;E-Baco ontology has now a proper URI (Uniform Resource Identificator). 
+From now on, the last version of E-BACO will be available in the following addresses: &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;E-Baco-Core module: &lt;a href=&quot;http://purl.org/ceu/ebaco-core&quot;&gt;http://purl.org/ceu/ebaco-core&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;E-Baco-Tasting module: &lt;a href=&quot;http://purl.org/ceu/ebaco-tasting&quot;&gt;http://purl.org/ceu/ebaco-tasting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;E-Baco-Winemaking module: &lt;a href=&quot;http://purl.org/ceu/ebaco-winemaking&quot;&gt;http://purl.org/ceu/ebaco-winemaking&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The default format is RDF/XML but it will be also available in other formats as Turtle. &lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/en/uri-ebaco.html&quot; rel=&quot;nofollow&quot;&gt;E-Baco does have a URI&lt;/a&gt; was originally published by &lt;a href=&quot;/about/&quot; rel=&quot;nofollow&quot;&gt;Alfredo Sánchez Alberca&lt;/a&gt; on &lt;a href=&quot;&quot; rel=&quot;nofollow&quot;&gt;E-BACO&lt;/a&gt;.&lt;/p&gt;
+  </content>
+</entry>
+
+<entry>
+  <title>Nace E-Baco</title>
+  <link href="/es/ebaco-birth.html"/>
+  <updated>2014-03-10T00:00:00+01:00</updated>
+  <id>/es/ebaco-birth.es</id>
+  <author>
+    <name>Alfredo Sánchez Alberca</name>
+    <uri>/</uri>
+    <email>ontologia.ebaco@gmail.com</email>
+  </author>
+  <content type="html">
+    
+    &lt;p&gt;&lt;em&gt;¡El mundo del vino está de suerte!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;El pasado mes de marzo comenzó el desarrollo de la ontología sobre enología E-Baco. En este proyecto trabajan varios investigadores de la Facultad de Ciencias Biológicas de la Universidad Complutense de Madrid y del Departamento de Matemática Aplicada y Estadística de la Universidad San Pablo CEU. El objetivo de este proyecto es desarrollar una ontología que defina un vocabulario preciso sobre el mundo del vino para poder ser utilizada en la &lt;a href=&quot;http://es.wikipedia.org/wiki/Web_sem%C3%A1ntica&quot;&gt;Web Semántica&lt;/a&gt;. La ontología será lo suficientemente versátil para poder ser utilizada en distintos contextos como bodegas, restaurantes, comercio, publicaciones, investigación, etc.)&lt;/p&gt;
+
+&lt;p&gt;En las novedades de este sitio os iremos informando de los avances en el desarrollo de esta ontología. &lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;/es/ebaco-birth.html&quot; rel=&quot;nofollow&quot;&gt;Nace E-Baco&lt;/a&gt; was originally published by &lt;a href=&quot;/about/&quot; rel=&quot;nofollow&quot;&gt;Alfredo Sánchez Alberca&lt;/a&gt; on &lt;a href=&quot;&quot; rel=&quot;nofollow&quot;&gt;E-BACO&lt;/a&gt;.&lt;/p&gt;
+  </content>
+</entry>
+
+<entry>
+  <title>E-Baco has born</title>
+  <link href="/en/ebaco-birth.html"/>
+  <updated>2014-03-10T00:00:00+01:00</updated>
+  <id>/en/ebaco-birth.en</id>
+  <author>
+    <name>Alfredo Sánchez Alberca</name>
+    <uri>/</uri>
+    <email>ontologia.ebaco@gmail.com</email>
+  </author>
+  <content type="html">
+    
+    &lt;p&gt;&lt;em&gt;¡The world of wine is lucky!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The last month of March started de development of E-Baco ontology, an ontolgoy about oenology. 
+In this project are working researchers of the Biology Faculty of the Complutense University of Madrid and of the Department of Applied Maths and Statistic of the San Pablo CEU University of Madrid. 
+The goal of this project is to develop an ontology with a precise vocabulary for describing and modeling the world of wine in the &lt;a href=&quot;http://en.wikipedia.org/wiki/Semantic_Web&quot;&gt;Semantic Web&lt;/a&gt;. 
+This ontology will be versatile enough to be used in different contex as wineries, restaurants, bars, wine shops, magazines, research, etc.)
+In the news section of this page we will publish the advances in the development of this ontology. &lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;/en/ebaco-birth.html&quot; rel=&quot;nofollow&quot;&gt;E-Baco has born&lt;/a&gt; was originally published by &lt;a href=&quot;/about/&quot; rel=&quot;nofollow&quot;&gt;Alfredo Sánchez Alberca&lt;/a&gt; on &lt;a href=&quot;&quot; rel=&quot;nofollow&quot;&gt;E-BACO&lt;/a&gt;.&lt;/p&gt;
+  </content>
+</entry>
+
+
+</feed>

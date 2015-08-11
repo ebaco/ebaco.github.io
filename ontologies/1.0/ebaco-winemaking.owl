@@ -1,0 +1,2781 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY core "http://purl.org/ceu/ebaco/core/1.0#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://purl.org/ceu/ebaco/winemaking#"
+     xml:base="http://purl.org/ceu/ebaco/winemaking"
+     xmlns:core="http://purl.org/ceu/ebaco/core/1.0#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://purl.org/ceu/ebaco/winemaking">
+        <rdfs:label rdf:datatype="&xsd;string">Ontología E-BACO</rdfs:label>
+        <dc:date rdf:datatype="&xsd;dateTime">09-feb-2015 11:20:52</dc:date>
+        <dc:creator rdf:datatype="&xsd;string">Alfredo Sánchez Alberca (asalber@ceu.es) &lt;http://aprendeconalf.es/foaf.rdf&gt;</dc:creator>
+        <dc:contributor rdf:datatype="&xsd;string">Aranzazu Gómez Garay (magom02@bio.ucm.es)</dc:contributor>
+        <dc:contributor rdf:datatype="&xsd;string">Elena Pérez-Urria Carril (elenapuc@bio.ucm.es)</dc:contributor>
+        <dc:rights rdf:datatype="&xsd;string">La ontología E-BACO está bajo una licencia de Creative Commons Reconocimiento-CompartirIgual 3.0 de España (http://creativecommons.org/licenses/by-sa/3.0/es/).</dc:rights>
+        <dc:contributor rdf:datatype="&xsd;string">Luisa Martín (lmartin@bio.ucm.es)</dc:contributor>
+        <dc:creator rdf:datatype="&xsd;string">Mari Ángeles Gómez Flechoso (magflechoso@bio.ucm.es)</dc:creator>
+        <dc:contributor rdf:datatype="&xsd;string">María Dolores Saco Sierra (mdsaco@farm.ucm.es)</dc:contributor>
+        <rdfs:comment xml:lang="en">The E-BACO ontology defines a precise vocabulary for representing knowledge in the enology domain. 
+The E-BACO-Core module contains the basic concepts, properties and relations for describing wines. 
+It has been developped by the Complutense university of Madrid and the San Pablo CEU university.</rdfs:comment>
+        <rdfs:comment xml:lang="es">La ontología E-BACO define un vocabulario preciso para representación de conocimiento en el dominio de la enología.
+El módulo E-BACO-Winemaking contiene los conceptos, propiedades y relaciones para describir los vinos y su proceso de elaboración y traza desde un punto de vista de expertos (bodegueros, enólogos, etc.)
+Ha sido desarrollada por la Universidad Complutense de Madrid y la Universidad San Pablo CEU.</rdfs:comment>
+        <owl:versionInfo xml:lang="es">Vesión 1.0</owl:versionInfo>
+        <rdfs:seeAlso rdf:resource="http://ebaco.github.io/"/>
+        <owl:imports rdf:resource="http://purl.org/ceu/ebaco/core/1.0"/>
+        <owl:versionIRI rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0"/>
+        <owl:imports rdf:resource="http://www.w3.org/ns/prov-o-20130430"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/core/1.0#appellation_of -->
+
+    <owl:AnnotationProperty rdf:about="&core;appellation_of">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#wine_region_with_appellation_object_property"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#wine_region_with_appellation_object_property -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#wine_region_with_appellation_object_property"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#allows_grape_variety -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#allows_grape_variety">
+        <rdfs:label xml:lang="en">allows grape variety</rdfs:label>
+        <rdfs:label xml:lang="es">permite la variedad de uva</rdfs:label>
+        <rdfs:comment xml:lang="es">Propiedad que relaciona una denominación de origen con una variedad de uva permitida en la denominación.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_appellation_object_property"/>
+        <rdfs:range rdf:resource="&core;Grape"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#belongs_to_wine_appellation -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#belongs_to_wine_appellation">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">belongs to wine appellation</rdfs:label>
+        <rdfs:label xml:lang="es">pertenece a la denominación de origen</rdfs:label>
+        <rdfs:comment xml:lang="es">Propiedad que relaciona un viñedo con la denominación de origen a la que pertenece.</rdfs:comment>
+        <rdfs:range rdf:resource="http://purl.org/ceu/ebaco/core#Wine_appellation"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#vineyard_object_property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#belongs_to_wine_region -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#belongs_to_wine_region">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">belongs to wine region</rdfs:label>
+        <rdfs:label xml:lang="es">pertenece a la región vinícola</rdfs:label>
+        <rdfs:range rdf:resource="http://purl.org/ceu/ebaco/core#Wine_region"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#vineyard_object_property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#belongs_to_winery -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#belongs_to_winery">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">belongs to winery</rdfs:label>
+        <rdfs:label xml:lang="es">pertenece a bodega</rdfs:label>
+        <rdfs:range rdf:resource="&core;Winery"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#vineyard_object_property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#contains_vineyard -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#contains_vineyard">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:label xml:lang="en">contains vineyard</rdfs:label>
+        <rdfs:label xml:lang="es">contiene viñedo</rdfs:label>
+        <rdfs:comment xml:lang="es">Propiedad que relaciona una región vinícola con un viñedo contenido en esa región.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_region_object_property"/>
+        <rdfs:range rdf:resource="http://purl.org/ceu/ebaco/winemaking#Vineyard"/>
+        <owl:inverseOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#belongs_to_wine_region"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#grape_allowed_in_wine_region -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#grape_allowed_in_wine_region">
+        <rdfs:label xml:lang="en">grape variety allowed in wine region</rdfs:label>
+        <rdfs:label xml:lang="es">variedad de uva permitida en región vinícola</rdfs:label>
+        <rdfs:range rdf:resource="http://purl.org/ceu/ebaco/core#Wine_region"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#grape_object_property"/>
+        <rdfs:domain rdf:resource="&core;Grape"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#grape_cultivation_object_property -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#grape_cultivation_object_property">
+        <rdfs:label xml:lang="en">grape cultivation object property</rdfs:label>
+        <rdfs:label xml:lang="es">propiedad del cultivo de la uva</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/ceu/ebaco/winemaking#Grape_cultivation"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#winemaking_object_property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#grape_cultivation_type -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#grape_cultivation_type">
+        <rdfs:label xml:lang="en">grape cultivation type</rdfs:label>
+        <rdfs:label xml:lang="es">tipo de cultivo de la uva</rdfs:label>
+        <rdfs:comment xml:lang="es">Propiedad que relaciona un cultivo con el tipo de cultivo que es (convencional, ecológico, biodinámico, etc.)</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_cultivation_object_property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#grape_destemming_object_property -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#grape_destemming_object_property">
+        <rdfs:label xml:lang="en">grape destemming object property</rdfs:label>
+        <rdfs:label xml:lang="es">propiedad del despalillado de la uva</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#winemaking_object_property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#grape_of_vintage -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#grape_of_vintage">
+        <rdfs:label xml:lang="en">grape of vintage</rdfs:label>
+        <rdfs:label xml:lang="es">uva de la vendimia</rdfs:label>
+        <rdfs:range rdf:resource="&core;Grape"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#vintage_object_property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#grow_grape -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#grow_grape">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">grow grape variety</rdfs:label>
+        <rdfs:label xml:lang="es">produce variedad de uva</rdfs:label>
+        <rdfs:range rdf:resource="&core;Grape"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#vineyard_object_property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#has_vineyard_pruning_system -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#has_vineyard_pruning_system">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">has vineyard prunning system</rdfs:label>
+        <rdfs:label xml:lang="es">tiene sistema de poda de viñedo</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#vineyard_object_property"/>
+        <rdfs:range rdf:resource="http://purl.org/ceu/ebaco/winemaking#vineyard_training"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#use_fertilizer -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#use_fertilizer">
+        <rdfs:label xml:lang="en">use fertilizer</rdfs:label>
+        <rdfs:label xml:lang="es">usa fertilizante</rdfs:label>
+        <rdfs:range rdf:resource="http://purl.org/ceu/ebaco/winemaking#Fertilizer"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_cultivation_object_property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#use_fungicide -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#use_fungicide">
+        <rdfs:label xml:lang="en">use fungicide</rdfs:label>
+        <rdfs:label xml:lang="es">usa fungicida</rdfs:label>
+        <rdfs:range rdf:resource="http://purl.org/ceu/ebaco/winemaking#Fungicide"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_cultivation_object_property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#use_herbicide -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#use_herbicide">
+        <rdfs:label xml:lang="en">use herbicide</rdfs:label>
+        <rdfs:label xml:lang="es">usa herbicida</rdfs:label>
+        <rdfs:range rdf:resource="http://purl.org/ceu/ebaco/winemaking#Herbicide"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_cultivation_object_property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#use_pesticide -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#use_pesticide">
+        <rdfs:label xml:lang="en">use pesticide</rdfs:label>
+        <rdfs:label xml:lang="es">usa pesticida</rdfs:label>
+        <rdfs:range rdf:resource="http://purl.org/ceu/ebaco/winemaking#Pesticide"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_cultivation_object_property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#vineyard_object_property -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#vineyard_object_property">
+        <rdfs:label xml:lang="en">vineyard object property</rdfs:label>
+        <rdfs:label xml:lang="es">propiedad del viñedo</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/ceu/ebaco/winemaking#Vineyard"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#vintage_object_property -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#vintage_object_property">
+        <rdfs:label xml:lang="en">vintage object property</rdfs:label>
+        <rdfs:label xml:lang="es">propiedad de la vendimia</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/ceu/ebaco/winemaking#Vintage"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#winemaking_object_property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#vintage_type -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#vintage_type">
+        <rdfs:label xml:lang="en">vintage type</rdfs:label>
+        <rdfs:label xml:lang="es">tipo de vendimia</rdfs:label>
+        <rdfs:comment xml:lang="es">Propiedad que relaciona una vendimia con el tipo de vendimia (manual, mecánica, etc.).</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#vintage_object_property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#wine_region_with_appellation_object_property -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#wine_region_with_appellation_object_property">
+        <rdfs:domain rdf:resource="http://purl.org/ceu/ebaco/core#Wine_region_with_appellation"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_region_object_property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#winemaking_object_property -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#winemaking_object_property">
+        <rdfs:label xml:lang="en">winemaking object property</rdfs:label>
+        <rdfs:label xml:lang="es">propiedad de la vinificación</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#acetaldehyde_content_of_wine_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#acetaldehyde_content_of_wine_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">acetaldehyde content of wine (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de acetaldehído del vino (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#acetic_acid_content_of_wine_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#acetic_acid_content_of_wine_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">acetic acid content of wine (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de ácido acético del vino (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#acetic_bacteria_count_of_wine -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#acetic_bacteria_count_of_wine">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">acetic bacteria count of wine</rdfs:label>
+        <rdfs:label xml:lang="es">recuento de bacterias acéticas del vino</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#amount_of_grapes_harvested_in_vintage_kg -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#amount_of_grapes_harvested_in_vintage_kg">
+        <rdfs:label xml:lang="en">amount of grapes harvested in vintage (Kg)</rdfs:label>
+        <rdfs:label xml:lang="es">cantidad de uva recolectada en la vendimia (Kg)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#vintage_data_property"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#annual_irrigation_l_ha -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#annual_irrigation_l_ha">
+        <rdfs:label xml:lang="en">annual irrigation (l/ha)</rdfs:label>
+        <rdfs:label xml:lang="es">riego anual (l/ha)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_cultivation_data_property"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#annual_max_temperature_celsius -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#annual_max_temperature_celsius">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">annual maximum temperature (degrees celsius)</rdfs:label>
+        <rdfs:label xml:lang="es">temperatura anual máxima (grados centígrados)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_cultivation_data_property"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#annual_min_temperature_celsius -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#annual_min_temperature_celsius">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">annual minimum temperature (degrees celsius)</rdfs:label>
+        <rdfs:label xml:lang="es">temperatura anual mínima (grados centígrados)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_cultivation_data_property"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#annual_rainfall_mm -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#annual_rainfall_mm">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">annual rainfall (mm)</rdfs:label>
+        <rdfs:label xml:lang="es">pluviometria anual (mm)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_cultivation_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#anthocyanins_polyphenols_content_of_grape_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#anthocyanins_polyphenols_content_of_grape_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">anthocyanins polyphenols content of grape (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de polifenoles antocianos de la uva (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#anthocyanins_polyphenols_content_of_wine_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#anthocyanins_polyphenols_content_of_wine_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">anthocyanins polyphenols content of wine (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de polifenoles antocianos del vino (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#appellation_data_property -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#appellation_data_property">
+        <rdfs:label xml:lang="en">appellation data property</rdfs:label>
+        <rdfs:label xml:lang="es">propiedad de la denominación de origen</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/ceu/ebaco/core#Appellations"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#ascorbic_acid_content_of_grape_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#ascorbic_acid_content_of_grape_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">ascorbic acid content of grape (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de ácido ascórbico de la uva (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#assimilable_nitrogen_content_of_grape_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#assimilable_nitrogen_content_of_grape_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">assimilable nitrogen content of grape (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de nitrógeno asimilable en la uva (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#average_annual_rainfall_mm -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#average_annual_rainfall_mm">
+        <rdfs:label xml:lang="en">average annual rainfall (mm)</rdfs:label>
+        <rdfs:label xml:lang="es">pluviometria anual media (mm)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#wine_region_data_property"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#boron_content_of_grape_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#boron_content_of_grape_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">boron content of grape (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de boro de la uva (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#boron_content_of_wine_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#boron_content_of_wine_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">boron content of wine (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de boro del vino (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#calcium_content_of_grape_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#calcium_content_of_grape_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">calcium content of grape (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de calcio de la uva (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#calcium_content_of_wine_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#calcium_content_of_wine_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">calcium content of wine (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de calcio del vino (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#carbon_dioxide_content_of_wine_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#carbon_dioxide_content_of_wine_g_l">
+        <rdfs:label xml:lang="en">carbon dioxide content of wine (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de ácido carbónico del vino (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:domain rdf:resource="&core;Sparkling_wine"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#citric_acid_content_of_grape_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#citric_acid_content_of_grape_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">citric acid content of grape (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de ácido cítrico de la uva (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#citric_acid_content_of_wine_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#citric_acid_content_of_wine_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">citric acid content of wine (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de ácido cítrico del vino (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#colouring_intensity_of_wine -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#colouring_intensity_of_wine">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">colouring intensity of wine</rdfs:label>
+        <rdfs:label xml:lang="es">intensidad colorante del vino</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#copper_content_of_grape_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#copper_content_of_grape_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">copper content of grape (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de cobre de la uva (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#copper_content_of_wine_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#copper_content_of_wine_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">copper content of wine (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de cobre del vino (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#creation_date_of_appellation -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#creation_date_of_appellation">
+        <rdfs:label xml:lang="en">creation date of the appellation</rdfs:label>
+        <rdfs:label xml:lang="es">fecha de creación de la denominación de origen</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#appellation_data_property"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#daily_mean_insolation_hours -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#daily_mean_insolation_hours">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">daily mean insolation (hours)</rdfs:label>
+        <rdfs:label xml:lang="es">insolación media diaria (horas)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_cultivation_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#free_sulphur_dioxide_content_of_wine_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#free_sulphur_dioxide_content_of_wine_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">free sulphur dioxide content of wine mg l</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de anhídrico sulfuroso libre del vino (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#fructose_content_of_grape_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#fructose_content_of_grape_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">fructose content of grape (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de fructosa de la uva (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#fructose_content_of_wine_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#fructose_content_of_wine_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">fructose content of wine (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de fructosa del vino (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#glucose_content_of_grape_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#glucose_content_of_grape_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">glucose content of grape (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de glucosa de la uva (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#glucose_content_of_wine_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#glucose_content_of_wine_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">glucose content of wine (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de glucosa del vino (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#glycerol_content_of_wine_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#glycerol_content_of_wine_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">glycerol content of wine (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de glicerina del vino (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#grape_cultivation_data_property -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#grape_cultivation_data_property">
+        <rdfs:label xml:lang="en">grape cultivation data property</rdfs:label>
+        <rdfs:label xml:lang="es">propiedad del cultivo de la uva</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/ceu/ebaco/winemaking#Grape_cultivation"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#winemaking_data_property"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#grape_data_property -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#grape_data_property">
+        <rdfs:label xml:lang="en">grape data property</rdfs:label>
+        <rdfs:label xml:lang="es">propiedad de la uva</rdfs:label>
+        <rdfs:domain rdf:resource="&core;Grape"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#grape_destemming_data_property -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#grape_destemming_data_property">
+        <rdfs:label xml:lang="en">grape destemming data property</rdfs:label>
+        <rdfs:label xml:lang="es">propiedad del despalillado de la uva</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/ceu/ebaco/winemaking#Grape_destemming"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#winemaking_data_property"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#grape_ph -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#grape_ph">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">grape pH</rdfs:label>
+        <rdfs:label xml:lang="es">pH de la uva</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#grape_reception_object_property -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#grape_reception_object_property">
+        <rdfs:label xml:lang="en">grape reception object property</rdfs:label>
+        <rdfs:label xml:lang="es">propiedad de la recepción de la uva</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/ceu/ebaco/winemaking#Grape_reception"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#winemaking_data_property"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#grape_selection_in_reception -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#grape_selection_in_reception">
+        <rdfs:label xml:lang="en">grape selection in reception</rdfs:label>
+        <rdfs:label xml:lang="es">selección de la uva en la recepción</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_reception_object_property"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#grape_selection_in_vintage -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#grape_selection_in_vintage">
+        <rdfs:label xml:lang="en">grape selection in vintage</rdfs:label>
+        <rdfs:label xml:lang="es">selección de la uva en la vendimia</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#vintage_data_property"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#has_grape_crushing -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#has_grape_crushing">
+        <rdfs:label xml:lang="en">has grape crushing</rdfs:label>
+        <rdfs:label xml:lang="es">hay estrujado de uva</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_destemming_data_property"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#has_grape_destemming -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#has_grape_destemming">
+        <rdfs:label xml:lang="en">has grape destemming</rdfs:label>
+        <rdfs:label xml:lang="es">hay estrujado de uva</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_destemming_data_property"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#hundred_grape_berries_weight_g -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#hundred_grape_berries_weight_g">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">A hundred grape berries weight (g)</rdfs:label>
+        <rdfs:label xml:lang="es">Peso de 100 uvas (g)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#hydrogen_sulphide_content_of_wine_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#hydrogen_sulphide_content_of_wine_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">hydrogen sulphide content of wine (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de ácido sulfídrico del vino (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#iron_content_of_grape_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#iron_content_of_grape_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">iron content of grape (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de hierro de la uva (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#iron_content_of_wine_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#iron_content_of_wine_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">iron content of wine (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de hierro del vino (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#lactic_acid_content_of_wine_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#lactic_acid_content_of_wine_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">lactic acid content of wine (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de ácido láctico del vino (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#lactic_bacteria_count_of_wine -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#lactic_bacteria_count_of_wine">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">lactic bacteria count of wine</rdfs:label>
+        <rdfs:label xml:lang="es">recuento de bacterias lácticas del vino</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#likely_alcohol_content_of_grape_vol -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#likely_alcohol_content_of_grape_vol">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">likely alcohol content of grape (%vol)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de alcohol probable de la uva (%vol)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#magnesium_content_of_grape_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#magnesium_content_of_grape_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">magnesium content of grape (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de magnesio de la uva (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#magnesium_content_of_wine_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#magnesium_content_of_wine_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">magnesium content of wine (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de magnesio del vino (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#malic_acid_content_of_grape_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#malic_acid_content_of_grape_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">malic acid content of grape (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de ácido málico de la uva (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#malic_acid_content_of_wine_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#malic_acid_content_of_wine_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">malic acid content of wine (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de ácido málico del vino (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#manganese_content_of_grape_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#manganese_content_of_grape_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">manganese content of grape (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de manganeso de la uva (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#manganese_content_of_wine_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#manganese_content_of_wine_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">manganese content of wine (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de manganeso del vino (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#max_altitude_of_vineyards -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#max_altitude_of_vineyards">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">maximum altitude of vineyards</rdfs:label>
+        <rdfs:label xml:lang="es">altitud máxima de los viñedos</rdfs:label>
+        <rdfs:comment xml:lang="es">Propiedad que relaciona una región vinícola con la altitud máxima de los viñedos que hay en ella.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#wine_region_data_property"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#max_grape_must_yield_allowed_by_wine_appellation -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#max_grape_must_yield_allowed_by_wine_appellation">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">maximum grape must yield allowed by the wine appellation (%)</rdfs:label>
+        <rdfs:label xml:lang="es">rendimiento máximo de mosto de uva permitido por la denominación de origen (%)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#wine_appellation_data_property"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#max_red_grape_production_allowed_by_wine_appellation_Kg_ha -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#max_red_grape_production_allowed_by_wine_appellation_Kg_ha">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">maximum white grape production allowed by the wine appellation (Kg/ha)</rdfs:label>
+        <rdfs:label xml:lang="es">producción máxima de uva tinta permitida por la denominación de origen (Kg/ha)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#wine_appellation_data_property"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#max_temperature_of_month_previous_vintage_celsius -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#max_temperature_of_month_previous_vintage_celsius">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">maximum temperature of month previous vintage (degrees celsius)</rdfs:label>
+        <rdfs:label xml:lang="es">temperatura máxima del mes previo a la vendimia (grados centígrados)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_cultivation_data_property"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#max_white_grape_production_allowed_by_wine_appellation_Kg_ha -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#max_white_grape_production_allowed_by_wine_appellation_Kg_ha">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">maximum white grape production allowed by the wine appellation (Kg/ha)</rdfs:label>
+        <rdfs:label xml:lang="es">producción máxima de uva blanca permitida por la denominación de origen (Kg/ha)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#wine_appellation_data_property"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#max_wine_yield_allowed_by_wine_appellation_hl_ha -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#max_wine_yield_allowed_by_wine_appellation_hl_ha">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">maximum wine yield allowed by the wine appellation (Hl/ha)</rdfs:label>
+        <rdfs:label xml:lang="es">rendimiento máximo de vino permitido por la denomiación de origen (Hl/ha)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#wine_appellation_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minExclusive rdf:datatype="&xsd;float">0.0</xsd:minExclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#maximum_installed_capacity_of_winery_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#maximum_installed_capacity_of_winery_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">maximum installed capacity of winery (l)</rdfs:label>
+        <rdfs:label xml:lang="es">capacidad máxima instalada de la bodega (l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#winery_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minExclusive rdf:datatype="&xsd;float">0.0</xsd:minExclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#min_altitude_of_vineyards -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#min_altitude_of_vineyards">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">minimum altitude of vineyards</rdfs:label>
+        <rdfs:label xml:lang="es">altitud mínima de los viñedos</rdfs:label>
+        <rdfs:comment xml:lang="es">Propiedad que relaciona una región vinícola con la altitud mínima de los viñedos que hay en ella.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#wine_region_data_property"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#min_temperature_of_month_previous_vintage_celsius -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#min_temperature_of_month_previous_vintage_celsius">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">minimum temperature of month previous to vintage (degreees celsius)</rdfs:label>
+        <rdfs:label xml:lang="es">temperatura mínima del mes previo a la vendimia (grados centígrados)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_cultivation_data_property"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#molybdenum_content_of_grape_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#molybdenum_content_of_grape_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">molybdenum content of grape (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de molibdeno de la uva (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#molybdenum_content_of_wine_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#molybdenum_content_of_wine_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">molybdenum content of wine (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de molibdeno del vino (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#nitrogen_content_of_wine_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#nitrogen_content_of_wine_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">nitrogen content of wine (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de nitrógeno del vino (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#phosphorus_content_of_grape_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#phosphorus_content_of_grape_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">phosphorus content of grape (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de fósforo de la uva (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#phosphorus_content_of_wine_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#phosphorus_content_of_wine_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">phosphorus content of wine (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de fósforo del vino (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#potassium_content_of_grape_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#potassium_content_of_grape_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">potassium content of grape (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de potasio de la uva (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#potassium_content_of_wine_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#potassium_content_of_wine_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">potassium content of wine (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de potasio del vino (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#proteins_content_of_wine_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#proteins_content_of_wine_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">proteins content of wine (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de proteínas del vino (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#reducing_sugars_content_of_wine_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#reducing_sugars_content_of_wine_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">reducing sugars content of wine (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de azúcares reductores del vino (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#sodium_chloride_content_of_wine_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#sodium_chloride_content_of_wine_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">sodium chloride content of wine (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de cloruro de sodio del vino (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#sodium_content_of_grape_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#sodium_content_of_grape_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">sodium content of grape (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de sodio de la uva (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#sodium_content_of_wine_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#sodium_content_of_wine_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">sodium content of wine (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de sodio del vino (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#succinic_acid_content_of_wine_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#succinic_acid_content_of_wine_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">succinic acid content of wine (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de ácido succínico del vino (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#sulfur_content_of_grape_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#sulfur_content_of_grape_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">sulphur content of grape (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de azufre de la uva (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#sulfur_content_of_wine_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#sulfur_content_of_wine_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">sulphur content of wine (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de azufre del vino (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#tannins_polyphenols_content_of_grape_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#tannins_polyphenols_content_of_grape_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">tannins polyphenols content of grape (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de polifenoles taninos de la uva (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#tannins_polyphenols_content_of_wine_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#tannins_polyphenols_content_of_wine_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">tannins polyphenols content of wine (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de polifenoles taninos del vino (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#tartaric_acid_content_of_grape_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#tartaric_acid_content_of_grape_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">tartaric acid content of grape (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de ácido tartárico de la uva (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#tartaric_acid_content_of_wine_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#tartaric_acid_content_of_wine_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">tartaric acid content of wine (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de ácido tartárico del vino (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#temperature_grape_reception_celsius -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#temperature_grape_reception_celsius">
+        <rdfs:label xml:lang="en">temperature of grape reception (degrees celsius)</rdfs:label>
+        <rdfs:label xml:lang="es">temperatura de la recepción de la uva (grados centígrados)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_reception_object_property"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#total_acidity_of_grape_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#total_acidity_of_grape_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">total acidity of grape (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">acidez total de la uva (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#total_bacteria_count_of_wine -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#total_bacteria_count_of_wine">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">total bacteria count of wine</rdfs:label>
+        <rdfs:label xml:lang="es">recuento de bacterias totales del vino</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#total_dry_extract_of_wine_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#total_dry_extract_of_wine_g_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">total dry extract of wine (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">extracto seco total del vino (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#total_polyphenols_content_of_wine -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#total_polyphenols_content_of_wine">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">total polyphenols content of wine</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de polifenoles totales del vino</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#total_sulphur_dioxide_content_of_wine_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#total_sulphur_dioxide_content_of_wine_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="es">contenido de anhídrico sulfuroso total del vino (mg/l)</rdfs:label>
+        <rdfs:comment xml:lang="en">total sulphur dioxide content</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#total_yeast_count_of_wine -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#total_yeast_count_of_wine">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">total yeast count of wine</rdfs:label>
+        <rdfs:label xml:lang="es">recuento total de levaduras del vino</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#vines_per_ha -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#vines_per_ha">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="es">densidad de plantación (vides/ha)</rdfs:label>
+        <rdfs:label xml:lang="es">planting density (vine/ha)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#vineyard_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#vineyard_area -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#vineyard_area">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">vineyard area (ha)</rdfs:label>
+        <rdfs:label xml:lang="es">area del viñedo (ha)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#vineyard_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#vineyard_data_property -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#vineyard_data_property">
+        <rdfs:label xml:lang="en">vineyard data property</rdfs:label>
+        <rdfs:label xml:lang="es">propiedad del viñedo</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/ceu/ebaco/winemaking#Vineyard"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#vineyard_row_orientation_degrees -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#vineyard_row_orientation_degrees">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">vineyard row orientation (degrees from North)</rdfs:label>
+        <rdfs:label xml:lang="es">Orientación de las líneas del viñedo (grados desde el norte)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#vineyard_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:maxExclusive rdf:datatype="&xsd;integer">360</xsd:maxExclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#vintage_data_property -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#vintage_data_property">
+        <rdfs:label xml:lang="en">vintage data property</rdfs:label>
+        <rdfs:label xml:lang="es">propiedad de la vendimia</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/ceu/ebaco/winemaking#Vintage"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#winemaking_data_property"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#vintage_starting_date -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#vintage_starting_date">
+        <rdfs:label xml:lang="en">vintage starting date</rdfs:label>
+        <rdfs:label xml:lang="es">fecha de inicio de la vendimia</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#vintage_data_property"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#wine_appellation_data_property -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#wine_appellation_data_property">
+        <rdfs:label xml:lang="en">wine appellation data property</rdfs:label>
+        <rdfs:label xml:lang="es">propiedad de la denominación de origen del vino</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/ceu/ebaco/core#Wine_appellation"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#appellation_data_property"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#wine_density_g_ml -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#wine_density_g_ml">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">wine density (g/ml)</rdfs:label>
+        <rdfs:label xml:lang="es">densidad del vino (g/ml)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#wine_fixed_acidity_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#wine_fixed_acidity_g_l">
+        <rdfs:label xml:lang="en">wine fixed acidity (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">acidez fija del vino (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#wine_ph -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#wine_ph">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">wine pH</rdfs:label>
+        <rdfs:label xml:lang="es">pH del vino</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="&xsd;float">14.0</xsd:maxInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:minExclusive rdf:datatype="&xsd;float">0.0</xsd:minExclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#wine_region_data_property -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#wine_region_data_property">
+        <rdfs:label xml:lang="es">propiedad de la región vinícola</rdfs:label>
+        <rdfs:label xml:lang="es">wine region data property</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/ceu/ebaco/core#Wine_region"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#wine_total_acidity_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#wine_total_acidity_g_l">
+        <rdfs:label xml:lang="en">wine total acidity (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">acidez total del vino (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#wine_volatile_acidity_g_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#wine_volatile_acidity_g_l">
+        <rdfs:label xml:lang="en">wine volatile acidity (g/l)</rdfs:label>
+        <rdfs:label xml:lang="es">acidez volátil del vino (g/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#winemaking_data_property -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#winemaking_data_property">
+        <rdfs:label xml:lang="en">winemaking data property</rdfs:label>
+        <rdfs:label xml:lang="es">propiedad de la vinificación</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#winery_data_property -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#winery_data_property">
+        <rdfs:label xml:lang="en">winery data property</rdfs:label>
+        <rdfs:label xml:lang="es">propiedad de la bodega</rdfs:label>
+        <rdfs:domain rdf:resource="&core;Winery"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#winery_foundation_date -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#winery_foundation_date">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">winery foundation date</rdfs:label>
+        <rdfs:label xml:lang="es">fecha de fundación de la bodega</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#winery_data_property"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#zinc_content_of_grape_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#zinc_content_of_grape_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">zinc content of grape (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de zinc de la uva (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#grape_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#zinc_content_of_wine_mg_l -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ceu/ebaco/winemaking#zinc_content_of_wine_mg_l">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">zinc content of wine (mg/l)</rdfs:label>
+        <rdfs:label xml:lang="es">contenido de zinc del vino (mg/l)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ceu/ebaco/core#wine_data_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Artificial_cultivation_treatment -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Artificial_cultivation_treatment">
+        <rdfs:label xml:lang="en">Artificial cultivation treatment</rdfs:label>
+        <rdfs:label xml:lang="es">Tratamiento del cultivo artificial</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#Cultivation_treatment"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ceu/ebaco/winemaking#Natural_cultivation_treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Bottle_cap -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Bottle_cap">
+        <rdfs:label xml:lang="en">Bottle cap</rdfs:label>
+        <rdfs:label xml:lang="es">Tapón de botella</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Cork_bottle_cap -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Cork_bottle_cap">
+        <rdfs:label xml:lang="en">Cork bottle cap</rdfs:label>
+        <rdfs:label xml:lang="es">Tapón de botella de corcho</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#Bottle_cap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Cultivation_treatment -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Cultivation_treatment">
+        <rdfs:label xml:lang="en">Cultivation treatment</rdfs:label>
+        <rdfs:label xml:lang="es">Tratamiento del cultivo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Fertilizer -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Fertilizer">
+        <rdfs:label xml:lang="en">Fertilizer</rdfs:label>
+        <rdfs:label xml:lang="es">Fertilizante</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#Cultivation_treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Fungicide -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Fungicide">
+        <rdfs:label xml:lang="en">Fungicide</rdfs:label>
+        <rdfs:label xml:lang="es">Fungicida</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#Cultivation_treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Grape_crushing -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Grape_crushing">
+        <rdfs:label xml:lang="en">Grape crushing</rdfs:label>
+        <rdfs:label xml:lang="es">Estrujado de la uva</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Grape_cultivation -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Grape_cultivation">
+        <rdfs:label xml:lang="en">Grape cultivation</rdfs:label>
+        <rdfs:label xml:lang="es">Cultivo de la uva</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Grape_destemming -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Grape_destemming">
+        <rdfs:label xml:lang="en">Grape destemming</rdfs:label>
+        <rdfs:label xml:lang="es">Despalillado de la uva</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Grape_must_maceration -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Grape_must_maceration">
+        <rdfs:label xml:lang="en">Grape must maceration</rdfs:label>
+        <rdfs:label xml:lang="es">Maceración del mosto de la uva</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Grape_must_pumpover -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Grape_must_pumpover">
+        <rdfs:label xml:lang="en">Grape must pumpover</rdfs:label>
+        <rdfs:label xml:lang="es">Remontado del mosto</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Grape_must_punchdown -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Grape_must_punchdown">
+        <rdfs:label xml:lang="en">Grape must punchdown</rdfs:label>
+        <rdfs:label xml:lang="es">Bazuqueo del mosto</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Grape_reception -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Grape_reception">
+        <rdfs:label xml:lang="en">Grape reception</rdfs:label>
+        <rdfs:label xml:lang="es">Recepción de la uva</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Herbicide -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Herbicide">
+        <rdfs:label xml:lang="en">Herbicide</rdfs:label>
+        <rdfs:label xml:lang="es">Herbicida</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#Cultivation_treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Natural_cultivation_treatment -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Natural_cultivation_treatment">
+        <rdfs:label xml:lang="en">Natural cultivation treatment</rdfs:label>
+        <rdfs:label xml:lang="es">Tratamiento del cultivo natural</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#Cultivation_treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Pesticide -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Pesticide">
+        <rdfs:label xml:lang="en">Pesticide</rdfs:label>
+        <rdfs:label xml:lang="es">Pesticida</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#Cultivation_treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Plastic_bottle_cap -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Plastic_bottle_cap">
+        <rdfs:label xml:lang="en">Plastic bottle cap</rdfs:label>
+        <rdfs:label xml:lang="es">Tapón de botella de plástico</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#Bottle_cap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Rubber_bottle_cap -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Rubber_bottle_cap">
+        <rdfs:label xml:lang="en">Rubber bottle cap</rdfs:label>
+        <rdfs:label xml:lang="es">Tapón de botella de caucho</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#Bottle_cap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Screw_bottle_cap -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Screw_bottle_cap">
+        <rdfs:label xml:lang="en">Screw bottle cap</rdfs:label>
+        <rdfs:label xml:lang="es">Tapón de botella roscado</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#Bottle_cap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Silicone_bottle_cap -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Silicone_bottle_cap">
+        <rdfs:label xml:lang="en">Silicone bottle cap</rdfs:label>
+        <rdfs:label xml:lang="es">Tapón de botella de silicona</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#Bottle_cap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Vineyard -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Vineyard">
+        <rdfs:label xml:lang="en">Vineyard</rdfs:label>
+        <rdfs:label xml:lang="es">Viñedo</rdfs:label>
+        <rdfs:comment xml:lang="es">Plantación de vides para la producción de uva.</rdfs:comment>
+        <rdfs:seeAlso xml:lang="es">http://es.wikipedia.org/wiki/Vi%C3%B1a</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Vineyard_soil -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Vineyard_soil">
+        <rdfs:label xml:lang="en">Vineyard soil</rdfs:label>
+        <rdfs:label xml:lang="es">Suelo de viña</rdfs:label>
+        <rdfs:comment xml:lang="es">Suelo en el que se cultiva una viña.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Vintage -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Vintage">
+        <rdfs:label xml:lang="en">Vintage</rdfs:label>
+        <rdfs:label xml:lang="es">Vendimia</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Wine_aging -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Wine_aging">
+        <rdfs:label xml:lang="en">Wine aging</rdfs:label>
+        <rdfs:label xml:lang="es">Envejecimiento del vino</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Wine_alcoholic_fermentation -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Wine_alcoholic_fermentation">
+        <rdfs:label xml:lang="en">Alcoholic fermentation of wine</rdfs:label>
+        <rdfs:label xml:lang="es">Fermentación alcohólica del vino</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Wine_barrel -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Wine_barrel">
+        <rdfs:label xml:lang="en">Wine barrel</rdfs:label>
+        <rdfs:label xml:lang="es">Barrica de vino</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#Wine_container"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Wine_bottle -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Wine_bottle">
+        <rdfs:label xml:lang="en">Wine bottle</rdfs:label>
+        <rdfs:label xml:lang="es">Botella de vino</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#Wine_container"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Wine_bottling -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Wine_bottling">
+        <rdfs:label xml:lang="en">Wine bottling</rdfs:label>
+        <rdfs:label xml:lang="es">Embotellado del vino</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Wine_container -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Wine_container">
+        <rdfs:label xml:lang="en">Wine container</rdfs:label>
+        <rdfs:label xml:lang="es">Contenedor de vino</rdfs:label>
+        <rdfs:comment xml:lang="es">Embase que sirve para contener o almacenar mosto, vino o algún derivado.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Wine_corking -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Wine_corking">
+        <rdfs:label xml:lang="en">Wine corking</rdfs:label>
+        <rdfs:label xml:lang="es">Encorchado del vino</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Wine_filtering -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Wine_filtering">
+        <rdfs:label xml:lang="en">Wine filtering</rdfs:label>
+        <rdfs:label xml:lang="es">Filtrado del vino</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Wine_malolactic_fermentation -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Wine_malolactic_fermentation">
+        <rdfs:label xml:lang="en">Malolactic fermentation of wine</rdfs:label>
+        <rdfs:label xml:lang="es">Fermentación maloláctica del vino</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Wine_maturation -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Wine_maturation">
+        <rdfs:label xml:lang="en">Wine maturation</rdfs:label>
+        <rdfs:label xml:lang="es">Crianza del vino</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Wine_pressing -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Wine_pressing">
+        <rdfs:label xml:lang="en">Wine pressing</rdfs:label>
+        <rdfs:label xml:lang="es">Prensado del vino</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Wine_tank -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Wine_tank">
+        <rdfs:label xml:lang="en">Wine tank</rdfs:label>
+        <rdfs:label xml:lang="es">Depósito de vino</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ceu/ebaco/winemaking#Wine_container"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#Yeast_strain -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#Yeast_strain">
+        <rdfs:label xml:lang="en">Yeast strain</rdfs:label>
+        <rdfs:label xml:lang="es">Cepa de levadura</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#vineyard_training -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking#vineyard_training">
+        <rdfs:label xml:lang="en">Vineyard training system</rdfs:label>
+        <rdfs:label xml:lang="es">Sistema de poda de la viña</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">http://en.wikipedia.org/wiki/Vine_training</rdfs:seeAlso>
+        <rdfs:comment xml:lang="es">Tipo de poda realizado a una viña para conducir sus tallos.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process -->
+
+    <owl:Class rdf:about="http://purl.org/ceu/ebaco/winemaking/1.0#Winemaking_process">
+        <rdfs:label xml:lang="en">Winemaking process</rdfs:label>
+        <rdfs:label xml:lang="es">Proceso de la vinificación</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Activity -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Activity">
+        <rdfs:label xml:lang="es">Actividad</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#gdc_trellis_vineyard_training -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ceu/ebaco/winemaking#gdc_trellis_vineyard_training">
+        <rdf:type rdf:resource="http://purl.org/ceu/ebaco/winemaking#vineyard_training"/>
+        <rdfs:label xml:lang="en">Geneva double curtain trellis vineyard training</rdfs:label>
+        <rdfs:label xml:lang="es">Sistema de poda de la viña en espaldera de doble cortina (gdb)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#goblet_training_system -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ceu/ebaco/winemaking#goblet_training_system">
+        <rdf:type rdf:resource="http://purl.org/ceu/ebaco/winemaking#vineyard_training"/>
+        <rdfs:label xml:lang="en">Globet vineyard training</rdfs:label>
+        <rdfs:label xml:lang="es">Sistema de poda de la viña en vaso</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#lyre_trellis_vineyard_training -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ceu/ebaco/winemaking#lyre_trellis_vineyard_training">
+        <rdf:type rdf:resource="http://purl.org/ceu/ebaco/winemaking#vineyard_training"/>
+        <rdfs:label xml:lang="en">Lyre trellis vineyard training</rdfs:label>
+        <rdfs:label xml:lang="es">Sistema de poda de la viña en forma de lira.</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#scott_henry_trellis_vineyard_training -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ceu/ebaco/winemaking#scott_henry_trellis_vineyard_training">
+        <rdf:type rdf:resource="http://purl.org/ceu/ebaco/winemaking#vineyard_training"/>
+        <rdfs:label xml:lang="en">Scott-Henry trellis vineyard training</rdfs:label>
+        <rdfs:label xml:lang="es">Sistema de poda de la viña Scott-Henry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#single_wire_trellis_vineyard_training -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ceu/ebaco/winemaking#single_wire_trellis_vineyard_training">
+        <rdf:type rdf:resource="http://purl.org/ceu/ebaco/winemaking#vineyard_training"/>
+        <rdfs:label xml:lang="en">Single wire trellis vineyard training</rdfs:label>
+        <rdfs:label xml:lang="es">Sistema de poda de la viña en espaldera con un alambre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#staked_vineyard_training -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ceu/ebaco/winemaking#staked_vineyard_training">
+        <rdf:type rdf:resource="http://purl.org/ceu/ebaco/winemaking#vineyard_training"/>
+        <rdfs:label xml:lang="en">Staked vineyard training</rdfs:label>
+        <rdfs:label xml:lang="es">Sistema de poda de la viña con estacas</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#two_wires_trellis_vineyard_training -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ceu/ebaco/winemaking#two_wires_trellis_vineyard_training">
+        <rdf:type rdf:resource="http://purl.org/ceu/ebaco/winemaking#vineyard_training"/>
+        <rdfs:label xml:lang="en">two wires trellis vineyard training</rdfs:label>
+        <rdfs:label xml:lang="es">Sistema de poda de la viña en espaldera con dos alambres</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ceu/ebaco/winemaking#vsp_trellis_wineyard_training -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ceu/ebaco/winemaking#vsp_trellis_wineyard_training">
+        <rdf:type rdf:resource="http://purl.org/ceu/ebaco/winemaking#vineyard_training"/>
+        <rdfs:label xml:lang="en">Vertical shoot ositioned trellis vineyard training</rdfs:label>
+        <rdfs:label xml:lang="es">Sistema de poda de la viña en espaldera vertical vsp</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://purl.org/ceu/ebaco/winemaking#wine_region_with_appellation_object_property">
+        <rdfs:label xml:lang="en">wine region with appellation object property</rdfs:label>
+        <rdfs:label xml:lang="es">propiedad de la región vinícola con denominación de origen</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

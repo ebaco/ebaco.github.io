@@ -1,0 +1,14 @@
+<script type="text/javascript">
+ var userLang = navigator.language || navigator.userLanguage; 
+ if (userLang == "es")
+   window.location.replace("/es/");
+ else
+   window.location.replace("/en/");
+</script>
+
+<div id="main" role="main">			
+	<div class="wrap">
+            <p>Please, select language: <a href="/en/">English</a> or <a href="/es/">Spanish</a>.</p>
+
+	</div><!-- /.wrap -->
+</div><!-- /#main -->
